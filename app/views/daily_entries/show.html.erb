@@ -1,0 +1,8 @@
+<em><%= @daily_entry.updated_at.strftime("%A, %d %b %Y %l:%M %p") %></em>
+<h1><%= @daily_entry.title %></h1>
+
+<p>
+  <%= @daily_entry.content %>
+</p>
+
+<%= link_to 'Edit', edit_daily_entry_path(@daily_entry), class: 'btn btn-green btn-sm' %>

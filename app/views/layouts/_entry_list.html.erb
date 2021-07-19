@@ -1,0 +1,20 @@
+<% if @diary_entries.present? %>
+  <% @diary_entries.each do |diary_entry| %>
+    <a href="<%= diary_entry_path(diary_entry) %>">
+      <div class="row">
+        <div class="col-sm-12 entry_listing">
+          <div class="row">
+            <div class="col-sm-3 text-center">
+              <h1><%= diary_entry.updated_at.strftime("%d") %></h1>
+              <h4><%= diary_entry.updated_at.strftime("%b %Y") %></h4>
+            </div>
+            <div class="col-sm-9">
+              <h4><%= truncate(diary_entry.title, length: 30, separator: ' ') %></h4>
+              <p class="grey-text"><%= truncate(diary_entry.content, length: 100, separator: ' ') %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  <% end %>
+<% end %>

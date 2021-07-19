@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <div class="entry_list xs-hidden col-sm-3 col-md-4">
+      <%= render 'layouts/entry_list' %>
+    </div>
+    <div class="main-section col-sm-offset-3 col-sm-9 col-md-offset-4 col-md-8">
+      <%= yield %>
+    </div>
   </body>
 </html>
