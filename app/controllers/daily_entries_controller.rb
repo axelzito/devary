@@ -21,16 +21,16 @@ class DailyEntriesController < ApplicationController
 
   # POST /daily_entries or /daily_entries.json
   def create
-    @diary_entry = DiaryEntry.new(diary_entry_params)
-    @diary_entry.user_id = current_user.id
+    @daily_entry = DailyEntry.new(daily_entry_params)
+    @daily_entry.user_id = current_user.id
 
     respond_to do |format|
-      if @diary_entry.save
-        format.html { redirect_to @diary_entry, notice: 'Diary entry was successfully created.' }
-        format.json { render :show, status: :created, location: @diary_entry }
+      if @daily_entry.save
+        format.html { redirect_to @daily_entry, notice: 'Daily entry was successfully created.' }
+        format.json { render :show, status: :created, location: @daily_entry }
       else
         format.html { render :new }
-        format.json { render json: @diary_entry.errors, status: :unprocessable_entity }
+        format.json { render json: @daily_entry.errors, status: :unprocessable_entity }
       end
     end
   end

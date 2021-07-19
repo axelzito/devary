@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">My Diary</a>
+      <a class="navbar-brand" href="/">My Daily</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to '<i class="fa fa-plus fa-2x" aria-hidden="true"></i>'.html_safe, new_diary_entry_path %></li>
+          <li><%= link_to '<i class="fa fa-plus fa-2x" aria-hidden="true"></i>'.html_safe, new_daily_entry_path %></li>
           <li><%= link_to '<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>'.html_safe, destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
