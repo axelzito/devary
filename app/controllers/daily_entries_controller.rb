@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DailyEntriesController < ApplicationController
-  before_action :set_daily_entry, only: %i[ show edit update destroy ]
+  before_action :set_daily_entry, only: %i[show edit update destroy]
 
   # GET /daily_entries or /daily_entries.json
   def index
@@ -7,8 +9,7 @@ class DailyEntriesController < ApplicationController
   end
 
   # GET /daily_entries/1 or /daily_entries/1.json
-  def show
-  end
+  def show; end
 
   # GET /daily_entries/new
   def new
@@ -16,8 +17,7 @@ class DailyEntriesController < ApplicationController
   end
 
   # GET /daily_entries/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /daily_entries or /daily_entries.json
   def create
@@ -39,7 +39,7 @@ class DailyEntriesController < ApplicationController
   def update
     respond_to do |format|
       if @daily_entry.update(daily_entry_params)
-        format.html { redirect_to @daily_entry, notice: "Daily entry was successfully updated." }
+        format.html { redirect_to @daily_entry, notice: 'Daily entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @daily_entry }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class DailyEntriesController < ApplicationController
   def destroy
     @daily_entry.destroy
     respond_to do |format|
-      format.html { redirect_to daily_entries_url, notice: "Daily entry was successfully destroyed." }
+      format.html { redirect_to daily_entries_url, notice: 'Daily entry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_daily_entry
-      @daily_entry = DailyEntry.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def daily_entry_params
-      params.require(:daily_entry).permit(:title, :content, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_daily_entry
+    @daily_entry = DailyEntry.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def daily_entry_params
+    params.require(:daily_entry).permit(:title, :content, :user_id)
+  end
 end
