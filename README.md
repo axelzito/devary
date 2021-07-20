@@ -1,24 +1,45 @@
-# README
+# Devary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Heroku link:
+- https://devary.herokuapp.com
 
-Things you may want to cover:
+## Using:
 
-* Ruby version
+- Ruby 3.0.1
+- Rails 6.1.4
 
-* System dependencies
+## Download and Installation
 
-* Configuration
+```sh
+git clone https://github.com/axelzito/devary.git project_name
+```
 
-* Database creation
+```sh
+cd project_name
+```
 
-* Database initialization
+```sh
+bundle install
+```
 
-* How to run the test suite
+```sh
+sudo -u postgres createuser -s devary -P
+rails db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+If the below step return any erro, try this:
 
-* Deployment instructions
+sudo -u postgres psql
+\password
 
-* ...
+Set your password, and try again:
+
+rails db:create
+```
+
+```sh
+rails db:migrate
+```
+
+```sh
+rails s
+```
